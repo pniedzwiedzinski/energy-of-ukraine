@@ -1,9 +1,9 @@
 <template>
 
       <v-navigation-drawer
-        :rail="rail"
-        permanent
-        @click="rail = false"
+        v-model="showSidebar"
+        elevation="2"
+        @click="showSidebar = false"
       >
         <v-list>
           <v-list-item
@@ -16,37 +16,60 @@
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
-          <v-list-item prepend-icon="mdi-generator-stationary" title="Produkcja" value="generation"></v-list-item>
-          <v-list-item prepend-icon="mdi-connection" title="Zużycie" value="consumption"></v-list-item>
-          <v-list-item prepend-icon="mdi-transmission-tower-export" title="Import/Eksport" value="transfer"></v-list-item>
-          <v-list-item prepend-icon="mdi-currency-eur" title="Ceny" value="prices"></v-list-item>
-          <v-list-item prepend-icon="mdi-barrel" title="Zasoby" value="sources"></v-list-item>
-          <v-list-item prepend-icon="mdi-leaf-circle" title="Środowisko" value="climate"></v-list-item>
-          
+            <v-list-item v-for="entry in menu" :key="entry.value" :prepend-icon="`mdi-${entry.icon}`" :title="entry.title" :value="entry.value"></v-list-item>
         </v-list>
 
-        <template v-slot:append>
-        <v-divider></v-divider>
-          <div class="pa-2">
+      </v-navigation-drawer>
+      <div class="pa-2">
             <v-btn 
             :icon="arrow"
-            variant="text"
-              @click.stop="rail = !rail"
+              @click.stop="showSidebar = !showSidebar"
             ></v-btn>
           </div>
-        </template>
-      </v-navigation-drawer>
-
 </template>
 
 <script>
 export default {
-    props: {
-        rail: false
+    data() {
+        return {
+            showSidebar: true,
+            menu: [
+                {
+                    "icon": "generator-stationary",
+                    "title": "Produkcja",
+                    "value": "generation",
+                },
+                {
+                    "icon": "connection",
+                    "title": "Zużycie",
+                    "value": "consumption",
+                },
+                {
+                    "icon": "transmission-tower-export",
+                    "title": "Import/Eksport",
+                    "value": "transfer",
+                },
+                {
+                    "icon": "currency-eur",
+                    "title": "Ceny",
+                    "value": "prices",
+                },
+                {
+                    "icon": "barrel",
+                    "title": "Zasoby",
+                    "value": "sources",
+                },
+                {
+                    "icon": "leaf-circle",
+                    "title": "Środowisko",
+                    "value": "climate",
+                },
+            ]
+        }
     },
     computed: {
         arrow() {
-            return this.rail ? "mdi-chevron-left" : "mdi-chevron-right"
+            return this.showSidebar ? "mdi-chevron-left" : "mdi-chevron-right"
         }
     }
 }
