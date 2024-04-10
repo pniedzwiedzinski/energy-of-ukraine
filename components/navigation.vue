@@ -1,9 +1,8 @@
 <template>
 
       <v-navigation-drawer
-        v-model="showSidebar"
         elevation="2"
-        @click="showSidebar = false"
+        v-model="showSidebar"
       >
         <v-list>
           <v-list-item
@@ -16,7 +15,9 @@
         <v-divider></v-divider>
 
         <v-list density="compact" nav>
-            <v-list-item v-for="entry in menu" :key="entry.value" :prepend-icon="`mdi-${entry.icon}`" :title="entry.title" :value="entry.value"></v-list-item>
+            <NuxtLink style="color: black; text-decoration: none" v-for="entry in menu" :key="entry.value" :to="entry.value">
+                <v-list-item :prepend-icon="`mdi-${entry.icon}`" :title="entry.title" :value="entry.value"></v-list-item>
+                </NuxtLink>
         </v-list>
 
       </v-navigation-drawer>
@@ -32,7 +33,7 @@
 export default {
     data() {
         return {
-            showSidebar: true,
+            showSidebar: null,
             menu: [
                 {
                     "icon": "generator-stationary",
@@ -63,6 +64,11 @@ export default {
                     "icon": "leaf-circle",
                     "title": "Środowisko",
                     "value": "climate",
+                },
+                {
+                    "icon": "information",
+                    "title": "O tej stronie",
+                    "value": "about",
                 },
             ]
         }
