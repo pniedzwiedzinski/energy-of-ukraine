@@ -76,7 +76,7 @@ export default {
                 {
                     "icon": "information",
                     "title": "O tej stronie",
-                    "value": "about",
+                    "value": "/",
                 },
             ]
         }
