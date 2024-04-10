@@ -5,7 +5,11 @@
     <v-layout>
     <navigation></navigation>
 
-    <v-main style=""><RouterView/></v-main>
+    <v-main style="">
+      <div class="container">
+        <NuxtPage />
+      </div>
+    </v-main>
     </v-layout>
   </v-card>
     </v-app>
@@ -28,8 +32,16 @@ body {
 
 main {
   margin-top: 2em;
-  height: 100vh; 
-  min-height: 500px; 
+  min-height: 100vh; 
+}
+
+iframe {
+  max-width: 100vw;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
   display: flex; 
   align-items: center; 
   flex-direction: column;

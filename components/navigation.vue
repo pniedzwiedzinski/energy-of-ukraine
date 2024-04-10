@@ -5,11 +5,13 @@
         v-model="showSidebar"
       >
         <v-list>
-          <v-list-item
+          <NuxtLink style="color: black; text-decoration: none" to="/">
+            <v-list-item
             prepend-avatar="https://cdn-icons-png.flaticon.com/256/197/197572.png"
             subtitle=""
             title="Energy of Ukraine"
           ></v-list-item>
+            </NuxtLink>
         </v-list>
 
         <v-divider></v-divider>
@@ -21,12 +23,18 @@
         </v-list>
 
       </v-navigation-drawer>
-      <div class="pa-2">
-            <v-btn 
+      <div style="position: absolute">
+      <v-fab
             :icon="arrow"
+            class="ms-4 mb-4"
+        location="top left"
+        size="48"
+        absolute
+        app
+        appear
               @click.stop="showSidebar = !showSidebar"
-            ></v-btn>
-          </div>
+            ></v-fab>
+        </div>
 </template>
 
 <script>
