@@ -3,6 +3,7 @@
       <v-navigation-drawer
         elevation="2"
         v-model="showSidebar"
+        class="d-print-none"
       >
         <v-list>
           <NuxtLink style="color: black; text-decoration: none" to="/">
@@ -23,7 +24,7 @@
         </v-list>
 
       </v-navigation-drawer>
-      <div style="position: absolute">
+      <div style="position: absolute" class="d-print-none">
       <v-fab
             :icon="arrow"
             class="ms-4 mb-4"
@@ -66,12 +67,17 @@ export default {
                 {
                     "icon": "barrel",
                     "title": "Zasoby",
-                    "value": "sources",
+                    "value": "resources",
                 },
                 {
                     "icon": "leaf-circle",
                     "title": "Środowisko",
                     "value": "climate",
+                },
+                {
+                    "icon": "book-open-page-variant",
+                    "title": "Bibliografia i źródła",
+                    "value": "sources"
                 },
                 {
                     "icon": "information",

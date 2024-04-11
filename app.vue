@@ -1,17 +1,25 @@
 <template>
   <div>
     <v-app>
-      <v-card>
-    <v-layout>
+    <v-layout style="flex-direction: column;">
     <navigation></navigation>
 
-    <v-main style="">
+    <v-main>
       <div class="container">
         <NuxtPage />
       </div>
     </v-main>
+    <v-footer>
+      
+    <v-row justify="center" no-gutters>
+      <v-divider />
+      <v-col class="text-center mt-4" cols="12">
+        <strong>Energy of Ukraine 2024</strong>
+        <p>Patryk Niedźwiedziński & Miłosz Wojdak</p>
+      </v-col>
+    </v-row>
+  </v-footer>
     </v-layout>
-  </v-card>
     </v-app>
   </div>
 </template>
@@ -30,9 +38,14 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+@media print {
+  main {
+    --v-layout-left: 0 !important;
+  }
+}
+
 main {
-  margin-top: 2em;
-  min-height: 100vh; 
+  margin: 2em 1em;
 }
 
 iframe {
