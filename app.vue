@@ -50,6 +50,8 @@ main {
 
 iframe {
   max-width: 100vw;
+  height: 57vw;
+  max-height: 450px;
 }
 
 .container {
