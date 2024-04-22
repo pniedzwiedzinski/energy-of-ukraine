@@ -29,7 +29,10 @@ import Navigation from './components/navigation.vue';
 
 export default {
   name: "app",
-  components: {Navigation}
+  components: {Navigation},
+  head() {
+	  titleTemplate: 'Energy of Ukraine - %s'
+  }
 }
 </script>
 
