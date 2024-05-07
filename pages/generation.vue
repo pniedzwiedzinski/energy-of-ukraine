@@ -2,6 +2,8 @@
     <h1>Produkcja</h1>
     <p>Mapa elektrowni i zakładów generujących energię elektryczną (podzielone według energii pierwotnej):</p>
     <iframe width="750" height="422" src="https://lookerstudio.google.com/embed/reporting/cd3a9360-bd15-4533-830a-4bc7fe9e0bbe/page/wrGtD" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+    <p>Moc zainstalowana podzielona według rodzaju</p>
+    <iframe width="750" height="422" src="https://lookerstudio.google.com/embed/reporting/c4860f19-73c9-43a8-8cea-387961117a8b/page/LLMzD" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus asperiores fugit quae fuga sequi maxime quibusdam iste expedita ea facere quos ex inventore vel ipsum, reprehenderit temporibus est quis neque.
         Neque ratione doloremque, maiores culpa eius nobis. Eligendi nobis eaque unde exercitationem placeat ad hic, quis quos similique cupiditate reiciendis aperiam. Nam natus aperiam sapiente commodi eveniet autem impedit sit.
