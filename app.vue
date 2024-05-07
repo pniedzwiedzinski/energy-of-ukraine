@@ -1,5 +1,8 @@
 <template>
   <div>
+    <Head>
+      <Title>Energy of Ukraine</Title>
+    </Head>
     <v-app>
     <v-layout style="flex-direction: column;">
     <navigation></navigation>
@@ -29,10 +32,7 @@ import Navigation from './components/navigation.vue';
 
 export default {
   name: "app",
-  components: {Navigation},
-  head() {
-	  titleTemplate: 'Energy of Ukraine - %s'
-  }
+  components: {Navigation}
 }
 </script>
 
@@ -58,8 +58,9 @@ iframe {
 }
 
 .container {
+  text-align: justify;
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 750px;
   display: flex; 
   align-items: center; 
   flex-direction: column;

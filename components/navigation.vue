@@ -60,19 +60,19 @@ export default {
                     "value": "transfer",
                 },
                 {
-                    "icon": "currency-eur",
-                    "title": "Ceny",
-                    "value": "prices",
-                },
-                {
                     "icon": "barrel",
                     "title": "Zasoby",
                     "value": "resources",
                 },
                 {
-                    "icon": "leaf-circle",
-                    "title": "Środowisko",
-                    "value": "climate",
+                    "icon": "currency-eur",
+                    "title": "Ceny",
+                    "value": "prices",
+                },
+                {
+                    "icon": "tank",
+                    "title": "Wojna",
+                    "value": "war",
                 },
                 {
                     "icon": "book-open-page-variant",
@@ -89,7 +89,7 @@ export default {
     },
     computed: {
         arrow() {
-            return this.showSidebar ? "mdi-chevron-left" : "mdi-chevron-right"
+            return this.showSidebar ? "mdi-close" : "mdi-menu"
         }
     }
 }
