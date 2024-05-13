@@ -80,6 +80,11 @@ export default {
                     "value": "sources"
                 },
                 {
+                    "icon": "api",
+                    "title": "Wymagania",
+                    "value": "etc"
+                },
+                {
                     "icon": "information",
                     "title": "O tej stronie",
                     "value": "/",
