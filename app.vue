@@ -66,7 +66,7 @@ iframe {
   flex-direction: column;
 }
 
-img {
+figure img {
   width: 100%;
 }
 </style>
