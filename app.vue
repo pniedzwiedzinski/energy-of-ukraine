@@ -65,4 +65,8 @@ iframe {
   align-items: center; 
   flex-direction: column;
 }
+
+img {
+  width: 100%;
+}
 </style>
