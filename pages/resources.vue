@@ -16,11 +16,19 @@
     </figure>
 
     <h2>Rezerwy Paliw</h2>
-    <p></p>
     <figure>
         <img src="~/public/fuel-reserves.svg">
         <figcaption>Źródło: ukrstat.gov.ua</figcaption>
     </figure>
+    <h3>Jak długo starczy rezerwa?</h3>
+    <p>
+        Możemy oszacować na jak długo starczy rezerwa, przyjmując wartość opałową węgla jak 25 kJ/kg i łączną sprawność wytwarzania i przesyłu energii elektrycznej jako 22 %.
+        Dzienne zużycie energii elektrycznej na skalę całego kraju to ok. 0,3 TWh, zatem:
+    </p>
+        <figure>
+            <img src="~/public/equation.png">
+        </figure>
+
 
     <h2>Potencjał OZE</h2>
     <figure>
