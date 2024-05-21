@@ -21,4 +21,14 @@
         <img src="~/public/fuel-reserves.svg">
         <figcaption>Źródło: ukrstat.gov.ua</figcaption>
     </figure>
+
+    <h2>Potencjał OZE</h2>
+    <figure>
+        <img src="~/public/ukraine-solar-map.jpg">
+        <figcaption>Źródło: <a href="https://globalsolaratlas.info/download/ukraine">Global Solar Atlas</a></figcaption>
+    </figure>
+    <figure>
+        <img src="~/public/ukraine-wind-map.jpg">
+        <figcaption>Źródło: <a href="https://globalwindatlas.info/en/area/Ukraine?download=print">Global Wind Atlas</a></figcaption>
+    </figure>
 </template>
