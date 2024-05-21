@@ -51,6 +51,20 @@ main {
   margin: 2em 1em;
 }
 
+h2 {
+  margin-top: 2em;
+}
+
+p {
+  margin: 0.5em 0;
+  line-height: 180%;
+}
+
+figure,
+iframe {
+  margin: 1em 0;
+}
+
 iframe {
   max-width: 100vw;
   height: 57vw;
