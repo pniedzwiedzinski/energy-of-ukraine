@@ -38,6 +38,10 @@
     </v-list>
 
     <v-divider />
+    <v-col align="center">
+      <img src="https://visitcount.itsvg.in/api?id=pniedzwiedzinski-ukraine&label=Liczba%20odwiedzin&color=12&icon=5&pretty=false">
+      <reading-timer />
+    </v-col>
   </v-navigation-drawer>
   <div
     style="position: absolute"
@@ -57,7 +61,12 @@
 </template>
 
 <script>
+import ReadingTimer from './ReadingTimer.vue'
+
 export default {
+  components: {
+    ReadingTimer,
+  },
   data() {
     return {
       showSidebar: null,

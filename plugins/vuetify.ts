@@ -9,8 +9,8 @@ export default defineNuxtPlugin((app) => {
   const vuetify = createVuetify({
     // ... your configuration
     components: {
-        VFab
-    }
+      VFab,
+    },
   })
   app.vueApp.use(vuetify)
 })
