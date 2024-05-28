@@ -89,6 +89,8 @@
             <p class="display-1">
               {{ currentTime }}
             </p>
+            <p>Data:</p>
+            <p>{{ today }}</p>
           </v-col>
         </v-row>
       </v-card-text>
@@ -121,6 +123,17 @@ export default {
       },
     ],
   }),
+  computed: {
+    today() {
+      const now = new Date()
+      return now.toLocaleString('pl-PL', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
+    },
+  },
   mounted() {
     this.updateTime()
     setInterval(() => {
