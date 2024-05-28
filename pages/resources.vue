@@ -24,7 +24,7 @@
   </figure>
   <h3>Jak długo starczy rezerwa?</h3>
   <p>
-    Możemy oszacować na jak długo starczy rezerwa, przyjmując wartość opałową węgla jak 25 kJ/kg i łączną sprawność wytwarzania i przesyłu energii elektrycznej jako 22 %.
+    Możemy oszacować na jak długo starczyłaby rezerwa od pokrycia zapotrzebowania całego państwa. Przyjmiemy wartość opałową węgla jako 25 kJ/kg i łączną sprawność wytwarzania i przesyłu energii elektrycznej na 22 %.
     Dzienne zużycie energii elektrycznej na skalę całego kraju to ok. 0,3 TWh, zatem:
   </p>
   <figure>
