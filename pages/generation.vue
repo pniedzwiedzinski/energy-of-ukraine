@@ -23,7 +23,7 @@
     <p>Powyższy podział zrobiony jest według rodzaju zakładu. Patrząc mniej szczegółowo, tak przedstawia się podział mocy zainstalowanej [MW] według udziału energii pierwotnej.</p>
     <iframe width="750" height="422" src="https://lookerstudio.google.com/embed/reporting/cd3a9360-bd15-4533-830a-4bc7fe9e0bbe/page/p_65yvdkz9gd" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     
-    <h2>Położenie jednostek wytwórczych</h2>
+    <h2 id="map">Położenie jednostek wytwórczych</h2>
     <p>Elektrownie są rozproszone na terenie całego państwa, choć można wyróżnić strefy przemysłowe, gdzie zagęszczenie jednostek wytwórczych jest większe.</p>
     <figure>
         <iframe width="750" height="422" src="https://lookerstudio.google.com/embed/reporting/cd3a9360-bd15-4533-830a-4bc7fe9e0bbe/page/wrGtD" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>

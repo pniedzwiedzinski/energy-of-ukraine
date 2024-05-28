@@ -1,31 +1,29 @@
 <template>
-    <h1>Wymogi zaliczeniowe</h1>
-    <v-form @submit.prevent="submitForm">
-        <v-text-field v-model="form.imie" label="Imię" required></v-text-field>
-        <v-text-field v-model="form.drugieimie" label="Drugie imię" required></v-text-field>
-        <v-text-field v-model="form.nazwisko" label="Nazwisko" required></v-text-field>
-        <v-text-field v-model="form.email" label="E-mail" type="email" required></v-text-field>
-        <v-date-picker v-model="form.dataUr" label="Data urodzenia" required></v-date-picker>
-        <v-checkbox v-model="form.zgoda" label="Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z RODO." required></v-checkbox>
-        <v-textarea v-model="form.doswiadczenie" label="Opowiedz nam o sobie"></v-textarea>
-        <v-container>
-            <v-btn style="margin-right: 10px" @click="clearForm">Wyczyść</v-btn>
-            <v-btn color="primary" type="submit">Zapisz się</v-btn>
-        </v-container>
-    </v-form>
+    <v-container fluid>
+        <v-row class="ma-12" align="center" justify="center">
+            <h1>Wymogi zaliczeniowe</h1>
+            <p>Na tej stronie znajdują się pozostałe wymogi strony na zaliczenie.</p>
+        </v-row>
 
-    <v-card>
-        <v-card-title class="headline">
-            Przelicznik TWh na PJ
-        </v-card-title>
-        <v-card-text>
-            <v-text-field v-model="twh" label="TWh" type="number" required></v-text-field>
-            <v-divider class="my-4"></v-divider>
-            <v-alert v-if="result !== null" :value="true" type="success" outlined>
-            {{ twh }} TWh to {{ result }} PJ
-            </v-alert>
-        </v-card-text>
-    </v-card>
+    <flag />
+    
+        <h2>Zapisz się</h2>
+        <v-form @submit.prevent="submitForm">
+            <v-col align="center">
+            <v-text-field v-model="form.imie" label="Imię" :rules="rules" required></v-text-field>
+            <v-text-field v-model="form.drugieimie" label="Drugie imię" :rules="rules" required></v-text-field>
+            <v-text-field v-model="form.nazwisko" label="Nazwisko" :rules="rules" required></v-text-field>
+            <v-text-field v-model="form.email" label="E-mail" type="email" :rules="rules" required></v-text-field>
+            <label for="dataUr">Data urodzenia</label>
+            <v-date-picker name="dataUr" v-model="form.dataUr" label="Data urodzenia"></v-date-picker>
+            <v-checkbox v-model="form.zgoda" label="Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z RODO." :rules="rules" required></v-checkbox>
+            <v-textarea v-model="form.doswiadczenie" label="Opowiedz nam o sobie"></v-textarea>
+            <v-container>
+                <v-btn style="margin-right: 10px" @click="clearForm">Wyczyść</v-btn>
+                <v-btn color="primary" type="submit">Zapisz się</v-btn>
+            </v-container>
+            </v-col>
+        </v-form>
 
     <br>
     <v-card>
@@ -39,10 +37,15 @@
       </v-row>
     </v-card-text>
   </v-card>
+</v-container>
 </template>
 
 <script>
+import Flag from "~/components/flag.vue";
 export default {
+    components: {
+        Flag
+    },
     mounted() {
         this.updateTime();
         setInterval(() => {
@@ -58,8 +61,14 @@ export default {
         zgoda: false,
         doswiadczenie: ''
       },
-      twh: null,
       currentTime: null,
+      rules: [
+        value => {
+          if (value) return true
+
+          return 'Uzupełnij to pole'
+        },
+      ],
     }),
     methods: {
         clearForm() {
@@ -72,8 +81,20 @@ export default {
                 doswiadczenie: ''
             }
         },
+        validateForm() {
+            const requiredFields = ["imie", "nazwisko", "email", "zgoda"]
+            for (let field of requiredFields) {
+                if (!this.form[field]) {
+                    console.log(field)
+                    return false
+                }
+            }
+            return true
+        },
         submitForm() {
-            alert("Przesłano formularz")
+            if (this.validateForm()) {
+                alert(`Przesłano formularz: ${JSON.stringify(this.form)}`)
+            }
         },
         updateTime() {
             const now = new Date();
@@ -86,12 +107,6 @@ export default {
             return unit < 10 ? '0' + unit : unit;
         }
     },
-    computed: {
-        result() {
-            const twhToPJ = 3.6;
-            return this.twh * twhToPJ;
-        }
-    }
 }
 </script>
 
