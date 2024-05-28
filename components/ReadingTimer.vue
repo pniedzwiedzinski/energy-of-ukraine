@@ -6,7 +6,7 @@
 export default {
   data() {
     return {
-      elapsedTime: 0, // Time in milliseconds
+      elapsedTime: 0,
       intervalId: null,
     }
   },
@@ -18,24 +18,38 @@ export default {
     },
   },
   mounted() {
-    // Load elapsed time from localStorage
     this.loadElapsedTime()
-    // Start an interval to update the elapsed time every second
-    this.intervalId = setInterval(this.updateElapsedTime, 1000)
+    this.startTimer()
+    document.addEventListener('visibilitychange', this.handleVisibilityChange)
   },
   beforeUnmount() {
-    // Clear the interval when the component is destroyed
-    clearInterval(this.intervalId)
+    this.stopTimer()
+    document.removeEventListener('visibilitychange', this.handleVisibilityChange)
   },
   methods: {
+    startTimer() {
+      this.intervalId = setInterval(this.updateElapsedTime, 1000)
+    },
+    stopTimer() {
+      clearInterval(this.intervalId)
+      this.intervalId = null
+    },
     updateElapsedTime() {
-      this.elapsedTime += 1000 // Increment by 1000 milliseconds (1 second)
+      this.elapsedTime += 1000
       localStorage.setItem('debugTimerElapsedTime', this.elapsedTime)
     },
     loadElapsedTime() {
       const savedTime = localStorage.getItem('debugTimerElapsedTime')
       if (savedTime) {
         this.elapsedTime = parseInt(savedTime, 10)
+      }
+    },
+    handleVisibilityChange() {
+      if (document.hidden) {
+        this.stopTimer()
+      }
+      else {
+        this.startTimer()
       }
     },
   },
