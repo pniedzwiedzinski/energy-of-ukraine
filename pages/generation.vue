@@ -86,7 +86,7 @@
       allowfullscreen
       sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
     />
-    <figcaption>Żródło: Global Power Plant Database, 2021</figcaption>
+    <figcaption>Źródło: Global Power Plant Database, 2021</figcaption>
   </figure>
 
   <h2>Produkcja ciepła</h2>
