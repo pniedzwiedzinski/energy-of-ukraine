@@ -4,35 +4,40 @@
       <Title>Energy of Ukraine</Title>
     </Head>
     <v-app>
-    <v-layout style="flex-direction: column;">
-    <navigation></navigation>
+      <v-layout style="flex-direction: column;">
+        <side-bar />
 
-    <v-main>
-      <div class="container">
-        <NuxtPage />
-      </div>
-    </v-main>
-    <v-footer>
-      
-    <v-row justify="center" no-gutters>
-      <v-divider />
-      <v-col class="text-center mt-4" cols="12">
-        <strong>Energy of Ukraine 2024</strong>
-        <p>Patryk Niedźwiedziński & Miłosz Wojdak</p>
-      </v-col>
-    </v-row>
-  </v-footer>
-    </v-layout>
+        <v-main>
+          <div class="container">
+            <NuxtPage />
+          </div>
+        </v-main>
+        <v-footer>
+          <v-row
+            justify="center"
+            no-gutters
+          >
+            <v-divider />
+            <v-col
+              class="text-center mt-4"
+              cols="12"
+            >
+              <strong>Energy of Ukraine 2024</strong>
+              <p>Patryk Niedźwiedziński & Miłosz Wojdak</p>
+            </v-col>
+          </v-row>
+        </v-footer>
+      </v-layout>
     </v-app>
   </div>
 </template>
 
 <script>
-import Navigation from './components/navigation.vue';
+import SideBar from './components/SideBar.vue'
 
 export default {
-  name: "app",
-  components: {Navigation}
+  name: 'App',
+  components: { SideBar },
 }
 </script>
 
@@ -75,8 +80,8 @@ iframe {
   text-align: justify;
   margin: 0 auto;
   max-width: 750px;
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   flex-direction: column;
 }
 

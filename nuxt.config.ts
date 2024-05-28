@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+
 export default defineNuxtConfig({
   ssr: true,
   devtools: { enabled: true },
@@ -14,13 +15,18 @@ export default defineNuxtConfig({
         config.plugins.push(vuetify({ autoImport: true }))
       })
     },
-    //...
+    '@nuxt/eslint',
   ],
   vite: {
     vue: {
       template: {
         transformAssetUrls,
       },
+    },
+  },
+  eslint: {
+    config: {
+      stylistic: true,
     },
   },
 })
