@@ -25,6 +25,31 @@
     Bezemisyjnym źródłem mocy jest również energetyka wodna, która w Ukrainie stanowi ponad 10% zainstalowanej mocy w elektrowniach wodnych (HPP - <i>Hydro Power Plant</i>) oraz elektrowniach szczytowo-pompowych (PSHPP - <i>Pumped Storage Hydro Power Plant</i>).
     Ostatnie lata to też rozwój odnawialnych źródeł energii, wykorzystując energię wiatru (WPP - <i>Wind Power Plant</i>) oraz fotowoltaikę (SPP - <i>Solar Power Plant</i>).
   </p>
+  <v-table>
+    <thead>
+      <tr>
+        <th class="text-left">
+          Skrót
+        </th>
+        <th class="text-left">
+          Pełna nazwa
+        </th>
+        <th class="text-left">
+          Tłumaczenie
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        v-for="abb in abbr"
+        :key="abb.abbr"
+      >
+        <td>{{ abb.abbr }}</td>
+        <td>{{ abb.meaning }}</td>
+        <td>{{ abb.polski }}</td>
+      </tr>
+    </tbody>
+  </v-table>
   <br>
   <p>Zmiany mocy zainstalowanej w latach 2010-2022:</p>
   <iframe
@@ -70,3 +95,22 @@
     <figcaption>Źródło: IEA</figcaption>
   </figure>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      abbr: [
+        { abbr: 'TPP', meaning: 'Thermal Power Plant', polski: 'Elektrownia konwencjonalna' },
+        { abbr: 'CHP', meaning: 'Combined Heat Power Plant', polski: 'Elektrociepłownia' },
+        { abbr: 'NPP', meaning: 'Nuclear Power Plant', polski: 'Elektrownia jądrowa' },
+        { abbr: 'HPP', meaning: 'Hydro Power Plant', polski: 'Elektrownia wodna' },
+        { abbr: 'PSHPP', meaning: 'Pumped Storage Hydro Power Plant', polski: 'Elektrownia szczytowo-pompowa' },
+        { abbr: 'WPP', meaning: 'Wind Power Plant', polski: 'Elektrownia wiatrowa' },
+        { abbr: 'SPP', meaning: 'Solar Power Plant', polski: 'Elektrownia słoneczna' },
+
+      ],
+    }
+  },
+}
+</script>
